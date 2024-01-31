@@ -2,6 +2,7 @@ import express from 'express';
 
 import { CategoryRoutes} from '../modules/categories/cat.route';
 import { SubCategoryRoutes } from '../modules/subcategories/subcat.route';
+import { DuaRoutes } from '../modules/dua/dua.route';
 
 const router = express.Router();
 const moduleRoutes = [
@@ -12,6 +13,10 @@ const moduleRoutes = [
   {
     path: '/sub-categories',
     route: SubCategoryRoutes,
+  },
+  {
+    path: '/dua',
+    route: DuaRoutes,
   },
 ];
 
