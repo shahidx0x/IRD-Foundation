@@ -1,0 +1,13 @@
+{
+  "name": "ird-task",
+  "version": "1.0.0",
+  "repository": "https://github.com/shahidx0x/IRD-Foundation.git",
+  "author": "shahidx0x <dev.imshahid@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "scripts": {
+    "start": "concurrently \"yarn --cwd client dev\" \"yarn --cwd server start\""
+  }
+}

@@ -2,20 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Red+Hat+Display&family=Rubik&display=swap');
-
-html,
-body,
-#root {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Oxygen', sans-serif;
-  font-family: 'Red Hat Display', sans-serif;
-  font-family: 'Rubik', sans-serif;
-  background-color: #F9FAFB;
-  /* overflow: hidden; */
+body {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 24px;
+  font-family: "Roboto", sans-serif;
+  background-color: #ebeef2;
 }
-
-
