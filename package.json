@@ -9,6 +9,7 @@
     "lucide-react": "^0.321.0"
   },
   "scripts": {
-    "start": "concurrently \"yarn --cwd client start\" \"yarn --cwd server start\""
+    "start:dev": "concurrently \"yarn --cwd client start\" \"yarn --cwd server start\"",
+    "start:server": "yarn --cwd client start\" \"yarn --cwd server start\""
   }
 }
