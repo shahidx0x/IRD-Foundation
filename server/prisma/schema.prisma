@@ -8,20 +8,37 @@ datasource db {
 }
 
 model category {
-  id           Int @id 
-  cat_id       Int?
+  id           Int?
+  cat_id       Int @id
   cat_name_bn  String?
   cat_name_en  String?
   no_of_subcat Int?
+  sub_category sub_category[]
+  dua          dua[]
   no_of_dua    Int?
   cat_icon     String?
+  
+}
+
+model sub_category {
+  id             Int?
+  cat_id         Int 
+  subcat_id      Int @id
+  category      category @relation(fields: [cat_id], references: [cat_id])
+  dua           dua[]
+  subcat_name_bn String?
+  subcat_name_en String?
+  no_of_dua      Int
+
 }
 
 model dua {
-  id                 Int @id
-  cat_id             Int?
-  subcat_id          Int?
-  dua_id             Int?
+  id                 Int?
+  cat_id             Int
+  subcat_id          Int
+  dua_id             Int @id
+  category      category @relation(fields: [cat_id], references: [cat_id])
+  sub_category sub_category @relation(fields: [subcat_id], references: [subcat_id])
   dua_name_bn        String?
   dua_name_en        String?
   top_bn             String?
@@ -40,11 +57,3 @@ model dua {
   audio              String?
 }
 
-model sub_category {
-  id             Int @id
-  cat_id         Int?
-  subcat_id      Int?
-  subcat_name_bn String?
-  subcat_name_en String?
-  no_of_dua      Int?
-}

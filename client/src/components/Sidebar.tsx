@@ -1,12 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 const Sidebar = () => {
   return (
-    <>
+    <div>
       <div
         id="left-bar"
-        className="w-[100px] flex flex-col gap-y-5 fixed overflow-hidden"
+        className="w-[100px] flex flex-col gap-y-5 fixed overflow-hidden "
       >
         <div className="bg-white rounded-3xl px-4 dark:bg-dark-bg lg:h-[calc(93vh)] xl:h-[94vh] 2xl:h-[93vh] 3xl:h-[93vh] overflow-y-auto overflow-x-hidden pb-16">
           <div className="pt-7 mb-10 xl:mb-16 2xl:mb-16 3xl:mb-24 container">
@@ -168,7 +167,7 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

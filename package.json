@@ -5,9 +5,10 @@
   "author": "shahidx0x <dev.imshahid@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "lucide-react": "^0.321.0"
   },
   "scripts": {
-    "start": "concurrently \"yarn --cwd client dev\" \"yarn --cwd server start\""
+    "start": "concurrently \"yarn --cwd client start\" \"yarn --cwd server start\""
   }
 }

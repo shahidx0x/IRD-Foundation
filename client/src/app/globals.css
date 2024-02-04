@@ -8,4 +8,20 @@ body {
   padding-top: 24px;
   font-family: "Roboto", sans-serif;
   background-color: #ebeef2;
+  overflow: hidden;
+
+}
+.scrl-cat{
+  overflow-y: auto;
+  overflow-x: none;
+  scrollbar-width: thin;  
+}
+
+.rounded-2lg {
+  border-radius: .625rem;
+}
+
+.scrl{
+  overflow-y: scroll;
+  scrollbar-width: none; 
 }
