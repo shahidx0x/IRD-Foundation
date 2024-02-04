@@ -1,6 +1,6 @@
 export default async function getDua(cat_id: number) {
   const response = await fetch(
-    `http://localhost:3000/api/v1/categories/list?dua=true&cat_id=${cat_id}`,
+    `https://irdf.onrender.com/api/v1/categories/list?dua=true&cat_id=${cat_id}`,
     { next: { revalidate: 60 } }
   );
   if (!response.ok) {

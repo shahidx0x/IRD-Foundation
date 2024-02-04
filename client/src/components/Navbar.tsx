@@ -4,12 +4,15 @@ import { Search } from "lucide-react";
 import React from "react";
 import CategoryCard from "./CategoryCard";
 import getCategory from "@/lib/getCategory";
+import searchCategory from "@/lib/searchCategory";
 
 const Navbar = async () => {
   const categoreyData = getCategory();
   const category = await categoreyData;
   const data = category.data;
-  console.log(data);
+  const searchCat = searchCategory("dua");
+  const searchData = await searchCat;
+  const displayCategory = [];
 
   return (
     <div>
@@ -48,3 +51,4 @@ const Navbar = async () => {
 };
 
 export default Navbar;
+

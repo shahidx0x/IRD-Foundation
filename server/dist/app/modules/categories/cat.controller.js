@@ -35,6 +35,8 @@ exports.CategoriesControllers = {
         const cat_id = req.query.cat_id ? Number(req.query.cat_id) : null;
         const sub_cat = req.query.sub_cat ? true : false;
         const dua = req.query.dua ? true : false;
+        const search = req.query.search || null;
+        console.log(search);
         const result = yield cat_service_1.categoriesService.fetchCategories({
             page,
             limit,
@@ -42,6 +44,7 @@ exports.CategoriesControllers = {
             cat_id,
             sub_cat,
             dua,
+            search,
         });
         const { total } = result, categories = __rest(result, ["total"]);
         (0, sendResponse_1.default)(res, {

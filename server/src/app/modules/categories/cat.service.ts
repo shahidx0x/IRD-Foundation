@@ -1,7 +1,9 @@
 import prisma from '../../../server';
 
 const fetchCategories = async (options: any) => {
-  const { page, limit, all, cat_id, sub_cat, dua } = options;
+  const { page, limit, all, cat_id, sub_cat, dua, search } = options;
+  console.log(search);
+
   const skip = parseInt(limit) * parseInt(page) - parseInt(limit) || 0;
   const take = parseInt(limit) || 10;
 
@@ -29,6 +31,14 @@ const fetchCategories = async (options: any) => {
             },
           },
         },
+      },
+    };
+  }
+  if (search) {
+    queryOptions.where = {
+      ...queryOptions.where,
+      cat_name_en: {
+        contains: search,
       },
     };
   }

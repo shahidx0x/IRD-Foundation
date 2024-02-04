@@ -1,6 +1,6 @@
 export default async function getCategory() {
   const response = await fetch(
-    "http://localhost:3000/api/v1/categories/list?sub_cat=true&dua=true",
+    "https://irdf.onrender.com/api/v1/categories/list?sub_cat=true&dua=true",
     { next: { revalidate: 60 } }
   );
   if (!response.ok) {

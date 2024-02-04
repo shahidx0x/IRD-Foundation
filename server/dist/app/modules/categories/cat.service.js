@@ -15,7 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.categoriesService = void 0;
 const server_1 = __importDefault(require("../../../server"));
 const fetchCategories = (options) => __awaiter(void 0, void 0, void 0, function* () {
-    const { page, limit, all, cat_id, sub_cat, dua } = options;
+    const { page, limit, all, cat_id, sub_cat, dua, search } = options;
+    console.log(search);
     const skip = parseInt(limit) * parseInt(page) - parseInt(limit) || 0;
     const take = parseInt(limit) || 10;
     const queryOptions = {
@@ -38,6 +39,11 @@ const fetchCategories = (options) => __awaiter(void 0, void 0, void 0, function*
                         },
                     },
                 },
+            } });
+    }
+    if (search) {
+        queryOptions.where = Object.assign(Object.assign({}, queryOptions.where), { cat_name_en: {
+                contains: search,
             } });
     }
     if (dua) {
